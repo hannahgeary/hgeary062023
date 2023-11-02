@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing</title>
+
+    <style>
+        *, *::before, *::after{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #canvas1{
+            background-color: silver;
+
+            position: absolute;
+            left:0;
+            top: 0;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Canvas Drawing</h1>
+    <canvas id="canvas1">
+
+    </canvas>
+
+    <script>
+        // create var tto grab canvas
+        // add methods for canvas - context 2D
+        const canvas = window.document.getElementById("canvas1");
+        // window.alert(canvas);
+
+        const ctx = canvas.getContext('2d'); // able to draw 2d objects
+
+        // make canvas take up broswer window
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // draw rectangle
+        ctx.fillStyle = "yellow";
+        ctx.fillRect(10,10, 100,100); // Four agrument - 2 for location, 2 for dimentions w/h
+        
+        ctx.fillStyle = "rgba(0,255,0,.3)";
+        ctx.fillRect(50, 50, 150,150);
+
+        ctx.fillStyle = "rgba(0,30,100)";
+        ctx.fillRect(70, 300, 70, 70);
+
+        ctx.fillStyle = "rgba(100,50,10)";
+        ctx.fillRect(170, 600, 90, 50);
+        //draw lines
+        ctx.strokeStyle = "white";
+        ctx.linewidth = 10;
+        ctx.lineCap= 'round';
+        
+        ctx.beginPath(); // pick up pen
+        ctx.moveTo(50, 350); // move pen
+        ctx.lineTo(500, 450) // start end
+        ctx.stroke();
+
+        ctx.strokeStyle = "magenta";
+        ctx.beginPath();
+        ctx.moveTo(550, 10);
+        ctx.lineTo(550, 400);
+        ctx.lineTo(1000, 400);
+        ctx.closePath(); // close path/shape
+        ctx.stroke();
+
+        ctx.strokeStyle = "blue";
+        ctx.beginPath();
+        ctx.moveTo(634, 70);
+        ctx.lineTo(200, 500);
+        ctx.stroke();
+
+        ctx.strokeStyle = "orange";
+        ctx.beginPath();
+        ctx.moveTo(200, 100);
+        ctx.lineTo(100, 600);
+        ctx.lineTo(400, 600);
+        ctx.lineTo(100, -700);
+        ctx.closePath();
+        ctx.stroke();
+    </script>
+</body>
+</html>

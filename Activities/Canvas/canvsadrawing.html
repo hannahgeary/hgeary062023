@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Drawing</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin-top: 50px;
+      }
+      h1 {
+        text-align: center;
+      }
+      #canvas {
+        margin: auto;
+        display: block;
+        border: 1px solid silver;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Canvas Drawing</h1>
+    <canvas id="canvas" width="1000px" height="500px"></canvas>
+
+    <script>
+      // Create variables
+      const canvas = window.document.querySelector('#canvas');
+      const ctx = canvas.getContext('2d');
+
+      canvas.style.backgroundColor = "#59D7F0";
+
+      ctx.strokeStyle = "#000";
+      ctx.fillStyle = "#fff";
+      ctx.lineWidth = 10;
+
+      // draw cloud 1
+      ctx.beginPath();
+      ctx.arc(300, 200, 100, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(200, 250, 60, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(400, 250, 40, 0, Math.PI * 2);
+      ctx.fill()
+      ctx.beginPath();
+      ctx.arc(450, 260, 30, 0, Math.PI * 2);
+      ctx.fill();
+
+      // draw cloud 2
+      ctx.beginPath();
+      ctx.arc(800, 300, 100, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(900, 350, 60, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(700, 350, 40, 0, Math.PI * 2);
+      ctx.fill()
+      ctx.beginPath();
+      ctx.arc(650, 360, 30, 0, Math.PI * 2);
+      ctx.fill();
+
+      // draw plane
+
+      // window
+      ctx.beginPath();
+      ctx.fillStyle = '#D8F0F2';
+      ctx.arc(400, 320, 100, 0, Math.PI * 2)
+      ctx.fill();
+
+      // body
+      ctx.beginPath();
+      ctx.fillStyle =  '#B8B8B8';
+      ctx.fillRect(200, 300, 450, 150);
+      ctx.arc(200, 375, 75, 0, Math.PI * 2);
+      ctx.fill();
+
+      // tail
+      ctx.strokeStyle ='#B8B8B8';
+      ctx.beginPath();
+      ctx.moveTo(648, 445);
+      ctx.lineTo(800, 320);
+      ctx.stroke();
+
+      ctx.lineTo(648,305);
+      ctx.stroke();
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.beginPath();
+      
+      ctx.moveTo(640, 350);
+      ctx.lineTo(800, 100);
+      ctx.stroke();
+
+      ctx.lineTo(806.5, 318);
+      ctx.stroke();
+      ctx.closePath();
+      ctx.fill();
+
+      // wing
+      ctx.beginPath();  
+    ctx.strokeStyle = '#918C8C';
+    ctx.fillStyle = '#918C8C';
+    ctx.moveTo(560, 450);
+    ctx.lineTo(300, 400);
+    ctx.stroke();
+    ctx.lineTo(520, 400);
+    ctx.stroke();
+    ctx.closePath();
+    ctx.fill();
+    </script>
+  </body>
+</html>
