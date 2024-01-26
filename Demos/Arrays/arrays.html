@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+
+    <h1>Arrays</h1>
+<h2> index, push, pop, shift</h2>
+<h2>forEach, console.log</h2>
+    <script>
+        // create array var
+ let myList =[];
+        //add values to array using index
+ myList[0] = "Apple";
+ myList[1]= "Orange";
+ myList[2]= "Banana";
+ myList[3]= "Grape";
+
+ // window.alert(myList);
+ //window.document.write(myList);
+
+ // add alues to array using push
+ myList.push("Blueberry");
+ myList.push("Dragonfruit");
+ myList.push("Pear");   
+ myList.push("Strawberry");
+
+ //window.document.write(myList);
+
+//  delete last value using pop
+myList.pop();
+
+// delete first value using shift
+myList.shift();
+
+// window.alert(myList);
+
+console.log(myList);
+
+//list array length
+
+console.log(myList.length);
+
+//cycle through arraying usinng forEach method
+
+myList.forEach(function(fruits, index){
+    console.log( index + " " + fruits);
+});
+
+// cycle through each array using the forEach
+myList.forEach(function(frs, index){
+window.alert(frs + ' is index ' + index);
+})
+    </script>
+</body>
+</html>

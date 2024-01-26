@@ -31,6 +31,20 @@
                 padding: 1rem;
                 bottom: 0;
             }
+            #erase{
+                background-color: none;
+                width: 30px;
+                height: 30px;
+                background-image: url(Images/eraser\ \(1\).svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+            #clear{
+                width: 50px;
+                height: 30px;
+                
+            }
     </style>
 
 </head>
@@ -42,6 +56,8 @@
     <section id="menu">
         <input type="color" id="colorpicker" value="#ff0000">
         <input type="range" id="rangepicker"min="2" max="100" value="15">
+        <input type="button" id="erase" onclick="erase">
+        <input type="button"  id="clear" value="Clear">
     </section>
 
     <script>
@@ -64,6 +80,7 @@
         // colorpicker variable
         const colorPicker = window.document.querySelector('#colorpicker');
         const rangePicker = window.document.querySelector('#rangepicker');
+        var erase = window.document.querySelector('#erase');
 
         // set canvas size
         canvas.width = window.innerWidth;
@@ -80,6 +97,7 @@
         // add event listener to color picker
         colorPicker.addEventListener('input', function(e){
             brushColor = e.target.value;
+            erase.style.border="none";
         });
 
         rangePicker.addEventListener('input', function(e){
@@ -116,8 +134,14 @@
                 //ctx.arc(mouse.x, mouse.y, brushSize, 0, Math.PI * 2);
                 ctx.lineTo(mouse.x, mouse.y);
                 ctx.stroke();
+                
             }
         }
+
+        erase.addEventListener('click', function(e){
+            brushColor="white";
+            erase.style.border="4px solid black";
+        })
 
         window.addEventListener('resize', function(){
             canvas.window = window.innerWidth;

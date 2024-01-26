@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Interface</title>
+
+    <style>
+
+        h1{
+            text-align: center;
+        }
+
+        #canvas{
+            border: 2px solid black;
+            display: block;
+            margin: auto;
+        }
+
+        #buttonholder{
+            width: 300px;
+            margin: auto;
+            border: 2px solid red;
+            display: flex;
+            flex-direction: column;
+        }
+
+        button{
+            margin: .5rem;
+            padding: .5rem;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>
+        Canvas Interface
+    </h1>
+
+    <canvas id="canvas">
+
+    </canvas>
+
+    <div id="buttonholder">
+        <button id="createline">create line</button>
+        <button id="createrectangle">create rectangle</button>
+        <button id="createtriangle">create triangle</button>
+        <button id="createarc">create arc</button>
+        <button id="createstar">create star</button>
+    </div>
+
+    <script>
+
+        //create variables
+
+        const canvas = window.document.querySelector('#canvas');
+        const ctx = canvas.getContext('2d');
+
+        // config canvas 
+        canvas.width = 400;
+        canvas.height = 400;
+
+        // style canvas
+
+        canvas.style.backgroundColor='lightblue';
+
+        // create variables for buttons
+        const btnCreateLine = window.document.querySelector('#createline');
+        const btnCreateRectangle = window.document.querySelector('#createrectangle');
+        const btnCreateTriangle = window.document.querySelector('#createtriangle');
+        const btnCreateArc = window.document.querySelector('#createarc');
+        const btnCreateStar = window.document.querySelector('#createstar');
+
+        // add event listeners
+        btnCreateLine.addEventListener('click', function(){
+            // window.alert('create line');
+            //define line style
+            ctx.strokeStyle = "black";
+            ctx.lineWidth = 15;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            
+            // draw line
+
+            ctx.beginPath();
+            ctx.moveTo(200, 15);
+            ctx.lineTo(200, 250);
+            ctx.lineTo(350, 250);
+            ctx.stroke();
+
+            
+        }
+        );
+        btnCreateRectangle.addEventListener('click', function(){
+            // window.alert('create rectangle');
+
+            ctx.strokeStyle = "white";
+            ctx.lineWidth = 10;
+            ctx.fillStyle = "red";
+            ctx.fillRect(0,0, 200,200);
+        }
+        );
+        btnCreateTriangle.addEventListener('click', function(){
+            //window.alert('create triangle');
+
+            ctx.strokeStyle = "blue";
+            ctx.fillStyle = "purple";
+            ctx.lineWidth = 15;
+            ctx.lineCap = "square";
+            ctx.lineJoin = "beveled";
+
+            ctx.beginPath();
+            ctx.moveTo(200,200);
+            ctx.lineTo(10,200);
+            ctx.lineTo(200,10);
+            ctx.lineTo(390,200);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.stroke();
+        }
+        );
+        btnCreateArc.addEventListener('click', function(){
+            //window.alert('create arc');
+
+            //convert drawing to degrees
+            let desiredDegree = 180;
+            let convertedRadian = (Math.PI/180) * desiredDegree;
+
+            ctx.beginPath();
+            ctx.strokeStyle = "black";
+            ctx.fillStyle = "red";
+            ctx.lineWidth = 10;
+             ctx.arc(200,200, 50, Math.PI *2,false);
+            ctx.arc(200,200,50,convertedRadian, false);
+
+            ctx.fill();
+            ctx.stroke();
+        }
+        );
+        
+        btnCreateStar.addEventListener('click', function(){
+            
+            ctx.beginPath();
+            ctx.strokeStyle = "orange";
+            ctx.fillStyle = "yellow";
+            ctx.lineWidth = 10;
+
+            ctx.moveTo(200,50);
+            ctx.lineTo(150,150);
+            ctx.lineTo(50,150);
+            ctx.lineTo(140,200);
+            ctx.lineTo(100,300);
+            ctx.lineTo(200,250);
+            ctx.lineTo(300,305);
+            ctx.lineTo(250,200);
+            ctx.lineTo(350,150);
+            ctx.lineTo(230,150);
+            ctx.closePath();
+            
+            ctx.fill();
+            ctx.stroke();
+
+        }
+        );
+
+    </script>
+</body>
+</html>

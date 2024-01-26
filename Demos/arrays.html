@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+
+    <h1>Arrays</h1>
+<h2> index, push, pop, shift</h2>
+<h2>forEach, console.log</h2>
+    <script>
+        // create array var
+ let fruitList =[];
+        //add values to array using index
+ fruitList[0] = "Apple";
+ fruitList[1]= "Orange";
+ fruitList[2]= "Banana";
+ fruitList[3]= "Grape";
+
+ // window.alert(fruitList);
+ //window.document.write(fruitList);
+
+ // add alues to array using push
+ fruitList.push("Blueberry");
+ fruitList.push("Dragonfruit");
+ fruitList.push("Pear");   
+ fruitList.push("Strawberry");
+
+ //window.document.write(fruitList);
+
+//  delete last value using pop
+fruitList.pop();
+
+// delete first value using shift
+fruitList.shift();
+
+// window.alert(fruitList);
+
+console.log(fruitList);
+
+//list array length
+
+console.log(fruitList.length);
+
+//cycle through arraying usinng forEach method
+
+fruitList.forEach(function(fruits, index){
+    console.log( index + " " + fruits);
+});
+
+// cycle through each array using the forEach
+fruitList.forEach(function(frs, index){
+window.alert(frs + ' is index ' + index);
+})
+    </script>
+</body>
+</html>
