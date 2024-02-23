@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background-color: lightslategray;
+        }
+
+        #container {
+            background-color: lightgoldenrodyellow;
+            width: 80%;
+            margin: auto;
+        }
+
+        #header{
+            background-color: red;
+            min-height: 150px;
+        }
+
+        #flex1{
+        border: 5px solid magenta;
+        display: flex;
+        }
+
+        #nav{
+            background-color: orange;
+            min-height: 500px;
+            width: 30%;
+        }
+
+        #main{
+            background-color: yellow;
+            min-height: 500px;
+            width: 70%;
+        }
+
+        #flex2{
+            border: 5px solid cyan;
+
+            display: flex;
+            flex-basis: auto;        }
+
+        #article1{
+            background-color: greenyellow;
+            min-height: 200px;
+            flex: 1;
+        }
+
+        #article2{
+            background-color: green;
+            min-height: 200px;
+            flex: 1;
+        }
+
+        #article3{
+            background-color: blue;
+            min-height: 200px;
+            flex: 1;
+        }
+
+        #footer{
+            background-color: purple;
+            min-height: 150px;
+        }
+    </style>
+
+
+</head>
+<body>
+    
+    <div id="container">
+
+        <header id="header">header</header>
+        
+        <div id="flex1">
+            <div id="nav">nav</div>
+    
+            <main id="main">main</main>
+        </div>
+
+       <div id="flex2">
+            <div id="article1">art1</div>
+            <div id="article2">art2</div>
+            <div id="article3">art3</div>
+       </div>
+
+        <footer id="footer">footer</footer>
+
+
+
+        <!-- end container -->
+    </div>
+
+
+</body>
+</html>

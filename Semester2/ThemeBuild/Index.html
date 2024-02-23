@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Build for Astro</title>
+
+    
+    <style>
+
+        :root{
+            --color-primary:red;
+            --color-secondary:blue;
+        }
+
+        html{
+            font-size: 62.5%;
+            /* allows you to use rems instead of pixels for sizing */
+            /* .5rem = 5px 
+            1rem = 10px
+            1.6rem = 16px
+            2rem = 10px
+            6rem =60px
+            */
+        }
+
+        /* browser reset */
+        *, *::before, *::after{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* fix browser bounce on mac */
+
+        /* general mobile first CSS */
+
+        .container{
+            background-color: white;
+            min-height: 10rem;
+            max-width: 120rem;
+            margin: auto;
+            padding: 0rem 3rem 0rem 3rem;
+        }
+
+        body{
+            overflow-x: auto;
+            width: 100%;
+            overscroll-behavior: none;
+        }
+
+        /* easy pixel calculations with rem */
+
+        body{
+            font-size: 1.6rem;
+        }
+        /* media queries */
+
+        
+        #pageheader{
+            min-height: 200px;
+            background-color: red;
+            padding: 1rem;
+        }
+        #showcase{
+            min-height: 200px;
+            background-color: orange;
+            padding: 1rem;
+        }
+        #features{
+            min-height: 200px;
+            background-color: gold;
+            padding: 1rem;
+        }
+        #pagecontent{
+            min-height: 200px;
+            background-color: green;
+            padding: 1rem;
+        }
+        #semesters{
+            min-height: 200px;
+            background-color: blue;
+            padding: 1rem;
+        }
+        #pagefooter{
+            min-height: 200px;
+            background-color: indigo;
+            padding: 1rem;
+        }
+
+        @media only screen and (min-width:320px){
+
+            body{
+                font-size: 1rem;
+            }
+
+            #features{
+                background-color: magenta;
+            };
+        }
+        @media only screen and (min-width:480px){
+
+            body{
+                font-size: 1.4rem;
+            }
+
+            #features{
+                background-color: yellow;
+            };
+        }
+        @media only screen and (min-width:768px){
+
+            body{
+                font-size: 1.6rem;
+            }
+            
+            #features{
+                background-color: lime;
+            };
+        }
+        @media only screen and (min-width:1024px){
+
+            body{
+                font-size: 2rem;
+            }
+            
+            #features{
+                background-color: coral;
+            };
+        }
+    </style>
+
+</head>
+<body>
+    <!-- 
+    pageheader
+    showcase
+    features
+    pagecontent
+    semesters
+    pagefooter
+     -->
+
+     <!-- begin page header -->
+
+     <header id="pageheader">pageheader
+
+        <div class="container">
+
+        </div>
+        <!-- end container -->
+
+     </header>
+
+     <!-- end page header -->
+
+
+
+     <!-- begin showcase -->
+
+     <section id="showcase">showcase
+
+        
+     </section>
+
+     <!-- end showcase -->
+
+
+
+     <!-- begin features -->
+
+     <section id="features">features
+
+        <div class="container">
+
+        </div>
+        <!-- end container -->
+
+     </section>
+
+     <!-- end features -->
+
+
+
+     <!-- begin pagecontent -->
+
+     <main id="pagecontent">pagecontent
+
+        <div class="container">
+
+        </div>
+        <!-- end container -->
+
+     </main>
+
+     <!-- end page content -->
+
+
+
+     <!-- begin semesters -->
+
+     <section id="semesters">semesters
+
+        <div class="container">
+
+        </div>
+        <!-- end container --> 
+
+     </section>
+
+     <!-- end semesters -->
+
+
+
+     <!-- begin pagefooter -->
+
+     <footer id="pagefooter">pagefooter
+
+        <div class="container">
+
+        </div>
+        <!-- end container -->
+
+     </footer>
+
+     <!-- end pagefooter -->
+
+
+</body>
+</html>

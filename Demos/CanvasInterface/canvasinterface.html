@@ -47,6 +47,7 @@
         <button id="createtriangle">create triangle</button>
         <button id="createarc">create arc</button>
         <button id="createstar">create star</button>
+        <button id="undodraw">Undo Drawing</button>
     </div>
 
     <script>
@@ -64,12 +65,17 @@
 
         canvas.style.backgroundColor='lightblue';
 
+        // undo variables
+        let undoArray = [];
+        let undoIndex = -1;  // to capurte position in the array. first position is 0.
+
         // create variables for buttons
         const btnCreateLine = window.document.querySelector('#createline');
         const btnCreateRectangle = window.document.querySelector('#createrectangle');
         const btnCreateTriangle = window.document.querySelector('#createtriangle');
         const btnCreateArc = window.document.querySelector('#createarc');
         const btnCreateStar = window.document.querySelector('#createstar');
+        const btnUndo = window.document.querySelector('#undodraw');
 
         // add event listeners
         btnCreateLine.addEventListener('click', function(){
@@ -87,8 +93,13 @@
             ctx.lineTo(200, 250);
             ctx.lineTo(350, 250);
             ctx.stroke();
+            ctx.closePath(); //prevent errors
 
-            
+            //window.alert("capture");
+            captureDrawing(){
+                
+            };
+
         }
         );
         btnCreateRectangle.addEventListener('click', function(){
@@ -98,6 +109,10 @@
             ctx.lineWidth = 10;
             ctx.fillStyle = "red";
             ctx.fillRect(0,0, 200,200);
+
+            captureDrawing(){
+                
+            };
         }
         );
         btnCreateTriangle.addEventListener('click', function(){
@@ -118,6 +133,9 @@
             ctx.fill();
 
             ctx.stroke();
+            captureDrawing(){
+                
+            };
         }
         );
         btnCreateArc.addEventListener('click', function(){
@@ -133,9 +151,13 @@
             ctx.lineWidth = 10;
              ctx.arc(200,200, 50, Math.PI *2,false);
             ctx.arc(200,200,50,convertedRadian, false);
+            ctx.closePath();
 
             ctx.fill();
             ctx.stroke();
+            captureDrawing(){
+                
+            };
         }
         );
         
@@ -161,9 +183,41 @@
             ctx.fill();
             ctx.stroke();
 
+            captureDrawing(){
+                
+            };
         }
         );
 
+        btnUndo.addEventListener('click', function(){
+            if(undoIndex <=0){
+                clearCanvas();
+            }
+            else{
+                replaceDrawing();
+            }
+        }
+        );
+
+        function captureDrawing(){
+            undoArray.push(ctx.getImageData(0,0, canvas.width, canvas.height));
+            undoIndex = undoIndex + 1;
+            //console.log(undoIndex);
+        };
+
+        function replaceDrawing(){
+            undoIndex = undoIndex - 1;
+            undoArray.pop();
+            ctx.putImageData(undoArray[] 0,0);
+        }
+
+        function clearCanvas(){
+            ctx.fillStyle = "lightblue";
+            ctx.fillRect(0,0, canvas.width, canvas.height);
+
+            undoArray = [];
+            undoIndex = -1;
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mash</title>
+</head>
+<body>
+    
+    <h1>MASH</h1>
+
+    <script>
+
+// create mash variable
+// Mansion Apparment Shack House
+// Arrays are variables that hold mutiple values
+
+let mash = [];
+
+// create arrays for four catagories
+// match the # of items to # of catagories
+let love = ["Cipher", "Goldie", "Captain", "Captain Cuttlefish"];
+
+let shelter = ["a Mansion", "an Apartment", "a House", "a Shack"];
+
+let children = ["10 kids", "4 kids", "2 kids", "0 kids"];
+
+let vehicle = ["Beetle", "Bus", "Semi-truck", "Crane"];
+
+
+// test rpg function
+//alert(randomPickGenerator());
+
+let randomPick;
+
+// test function
+document.write(randomPickGenerator());
+
+// test arrays
+alert("This is your future:")
+alert("You will marry " + love[0]);
+alert("You will live in " + shelter[1]);
+alert("You will have " + children[3]);
+alert("You will drive a " + vehicle[2]);
+
+// create random number fuction
+
+        function randomPickGenerator(){
+
+            randomPick = Math.floor(Math.random() * 4);
+
+            return randomPick;
+        }
+
+    </script>
+
+</body>
+</html>
